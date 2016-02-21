@@ -1,0 +1,22 @@
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+      serviceUrl:
+        defaultZone: http://192.168.99.100:8080/eureka/v2/
+spring:
+  application:
+    name: hystrix-feign-client
+server:
+  port: 8000
+
+hystrix:
+  command:
+    MyService:
+      getUsersFromAnotherService:
+        execution:
+          isolation:
+            strategy: SEMAPHORE
+
+hystrix.command.default.execution.isolation.strategy: SEMAPHORE
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
