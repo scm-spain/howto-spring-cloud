@@ -15,8 +15,9 @@ Open application.yml to see an example.
 
 ## Usage
 This application has no business logic.
-It only calls another API, fetch the response and show it to us. So for this example to work we need to start the `discovery-eureka` application too. That's the API that will respond with user data to this application.
-Once the application is up and running, let's say is running on port 8000, we can list users
+It only calls another API, fetch the response and show it to us.
+So for this example to work we need to start the `discovery-eureka` application too (please, read the README for that project). That's the API that will respond with user data to this application.
+Once both applications are up and running, if this one is running on port 8000, we can list users
 
 ```bash
 $ curl -X GET -H "Accept: application/json" "http://localhost:8000/users"
