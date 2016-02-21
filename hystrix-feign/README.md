@@ -33,6 +33,10 @@ If that service has several instances running, Ribbon will do client side load b
 Notice that since we don't want to block the thread while making the HTTP call, we tell Feign that our client will return an Observable object.
 So we can subscribe to the response of the HTTP client and do something whenever the List<User> is emitted.
 
+## Feign Interceptors
+We can add interceptors to Feign to modify the http requests, for example, adding headers like User-Agent or X-Forwarded-For, or trying to authenticate the request.
+In the `FeignConfiguration` class you can find two example interceptors (they could be defined on their own class). All interceptors are added to all outgoing requests.
+
 ## Hystrix
 The fallback methods need to have the same signature as the normal methods.
 Fallback methods can be Hystrix commands too, with their own fallback methods, chaining the fallback process.
