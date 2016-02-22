@@ -1,7 +1,5 @@
 package com.scmspain.howtospring.reactive;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import rx.Observable;
 
@@ -9,10 +7,8 @@ import javax.inject.Inject;
 
 @RequestMapping(path = "/")
 @ResponseBody
-@CrossOrigin
 public class Endpoint {
 
-    private static final Logger logger = LoggerFactory.getLogger(Endpoint.class);
     private MyService myService;
 
     @Inject
