@@ -28,3 +28,7 @@ Then, we want to transform our Observable response into a Spring `DeferredResult
 
 ## Issues
 This application will fail unless we disable the logback access log module, [since it's not compatible with the Async mode](https://github.com/akihyro/spring-boot-ext-logback-access/issues/2).
+
+## Enabling logback
+
+Uncomment the dependency on build.gradle, it's disable by default because the application does not work with the module enabled.
