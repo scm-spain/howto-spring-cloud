@@ -30,7 +30,7 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-hystrix:1.0.0.RELEASE')
     compile 'io.jmnarloch:rxjava-spring-boot-starter:1.0.0'
 
-    compile('net.rakugakibox.springbootext:spring-boot-ext-logback-access:1.0')
+    compile('net.rakugakibox.springbootext:spring-boot-ext-logback-access:1.1')
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 

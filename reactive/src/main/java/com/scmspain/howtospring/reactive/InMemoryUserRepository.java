@@ -6,7 +6,6 @@ import rx.Observable;
 import java.util.HashMap;
 import java.util.Map;
 
-@Service
 public class InMemoryUserRepository implements UserRepository {
     private Map<String, User> users;
 

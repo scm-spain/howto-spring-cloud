@@ -24,7 +24,3 @@ First, we need the `@EnableAsync` annotation to tell Spring that we want asynchr
 Then, we want to transform our Observable response into a Spring `DeferredResult`. We could do it manually in all our endpoints, or use [the RxJava Spring Cloud Started library](https://github.com/jmnarloch/rxjava-spring-boot-starter/) that does exactly the same.
 
 [I think that until next Spring release](https://github.com/jmnarloch/rxjava-spring-boot-starter/issues/1#issuecomment-186657775), we need a last tweet adding the following annotation `@SpringBootApplication(exclude = RxJavaAutoConfiguration.class)` in our Application.
-
-
-## Issues
-This application will fail unless we disable the logback access log module, [since it's not compatible with the Async mode](https://github.com/akihyro/spring-boot-ext-logback-access/issues/2).

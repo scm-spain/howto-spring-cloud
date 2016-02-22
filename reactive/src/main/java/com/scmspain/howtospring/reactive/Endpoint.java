@@ -7,8 +7,8 @@ import rx.Observable;
 
 import javax.inject.Inject;
 
-@RestController
 @RequestMapping(path = "/")
+@ResponseBody
 @CrossOrigin
 public class Endpoint {
 
