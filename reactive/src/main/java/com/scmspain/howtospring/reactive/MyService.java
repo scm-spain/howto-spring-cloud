@@ -9,7 +9,6 @@ import rx.Observable;
 import javax.inject.Inject;
 import java.util.ArrayList;
 
-@Service
 public class MyService {
     private static final Logger logger = LoggerFactory.getLogger(MyService.class);
 
