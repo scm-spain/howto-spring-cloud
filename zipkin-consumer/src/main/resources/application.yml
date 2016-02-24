@@ -1,0 +1,33 @@
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+      serviceUrl:
+        defaultZone: http://192.168.99.100:8080/eureka/v2/
+
+server:
+  port: 9411
+
+
+spring:
+  cloud:
+    stream:
+      binder:
+        kafka:
+          brokers: 192.168.99.100
+          defaultBrokerPort: 9092
+          zkNodes: 192.168.99.100
+          defaultZkPort: 2181
+  datasource:
+    schema: classpath:/mysql.sql
+    url: jdbc:mysql://${MYSQL_HOST:localhost}/test
+    username: root
+    password: root
+    initialize: true
+    continueOnError: true
+#  sleuth:
+#    enabled: false
+
+#zipkin:
+#  store:
+#    type: mysql
