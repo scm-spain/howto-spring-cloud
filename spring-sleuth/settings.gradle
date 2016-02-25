@@ -1,0 +1,4 @@
+rootProject.name = 'spring-sleuth'
+include 'service1'
+include 'service2'
+
