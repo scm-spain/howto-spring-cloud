@@ -1,0 +1,4 @@
+mydata:
+  user:
+    name: Bob
+    age: 42
