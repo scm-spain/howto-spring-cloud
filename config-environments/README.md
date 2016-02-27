@@ -36,7 +36,7 @@ You can pass [configuration values to Spring in several ways](https://docs.sprin
 3. JNDI attributes from java:comp/env.
 4. Java System properties (System.getProperties()).
 5. OS environment variables.
-6. A RandomValuePropertySource that only has properties in random.*.
+6. A RandomValuePropertySource that only has properties in random.\*.
 7. Profile-specific application properties outside of your packaged jar (application-{profile}.properties and YAML variants)
 8. Profile-specific application properties packaged inside your jar (application-{profile}.properties and YAML variants)
 9. Application properties outside of your packaged jar (application.properties and YAML variants).
