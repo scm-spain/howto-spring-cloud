@@ -1,0 +1,7 @@
+app:
+  image: jeanblanchard/java
+  ports:
+    - "8000:8000"
+  volumes:
+    - ./build/libs:/code
+  command: java -jar /code/config-environments-1.0-SNAPSHOT.jar

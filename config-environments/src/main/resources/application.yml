@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: config-environments
+
+eureka:
+  client:
+    enabled: false
+
+server:
+  port: 8000
+
+mydata:
+  message: "${mydata.user.name} (${mydata.user.age}) is currently in ${spring.application.name}"
+  user:
+    name: Alice
+    age: 23

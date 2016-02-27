@@ -27,7 +27,7 @@ public class Endpoint {
     }
 
     @RequestMapping(path = "/users", method = RequestMethod.GET)
-    public List listUsers() {
+    public List<User> listUsers() {
         return userRepository.findAll();
     }
 
