@@ -24,4 +24,8 @@ public class InMemoryUserRepository {
     public User findById(String userId) {
         return users.get(userId);
     }
+
+    public void add(User user) {
+        users.put(user.getId(), user);
+    }
 }
