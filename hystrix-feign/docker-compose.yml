@@ -1,0 +1,24 @@
+eureka:
+  image: netflixoss/eureka:1.3.1
+  ports:
+    - "8080:8080"
+
+hystrixfeign:
+  image: jeanblanchard/java
+  ports:
+    - "8000:8000"
+  links:
+    - eureka
+  volumes:
+    - ./build/libs:/code
+  command: java -jar /code/hystrix-feign-1.0-SNAPSHOT.jar
+
+discoveryeureka:
+  image: jeanblanchard/java
+  ports:
+    - "8001:8001"
+  links:
+    - eureka
+  volumes:
+    - ./../discovery-eureka/build/libs:/code
+  command: java -jar /code/discovery-eureka-1.0-SNAPSHOT.jar
