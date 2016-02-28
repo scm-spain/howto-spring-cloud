@@ -2,10 +2,11 @@
 This is an example application to show how to use Feign (an http client with load balancing) to execute http calls from one service to another one, wrapping our calls with Hystrix so we can get the benefits of the circuit breaker pattern.
 
 ## Running the application
-To start playing around you need to build it and run it
+To start playing around you need to build it and run both this application and the `discovery-eureka` example
 
 ```bash
-./gradlew clean build bootRun
+$ ./gradlew clean build
+$ docker-compose up
 ```
 
 ## Configuration
@@ -16,7 +17,13 @@ Open application.yml to see an example.
 ## Usage
 This application has no business logic.
 It only calls another API, fetch the response and show it to us.
-So for this example to work we need to start the `discovery-eureka` application too (please, read the README for that project). That's the API that will respond with user data to this application.
+So for this example to work we need to start the `discovery-eureka` application too (please, read the README for that project). That's the API that will respond with user data to this application. You can start both API's using `docker-compose`
+
+
+```bash
+$ docker-compose up
+```
+
 Once both applications are up and running, if this one is running on port 8000, we can list users
 
 ```bash
