@@ -30,7 +30,8 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-hystrix:1.0.0.RELEASE')
     compile('org.springframework.cloud:spring-cloud-starter-hystrix-dashboard:1.0.0.RELEASE')
     compile('org.springframework.cloud:spring-cloud-starter-feign:1.0.4.RELEASE')
-    compile 'com.netflix.feign:feign-hystrix:8.14.4'
+    compile('com.netflix.feign:feign-hystrix:8.14.4')
+    compile('com.netflix.feign:feign-jaxrs:8.14.4')
 
     compile('net.rakugakibox.springbootext:spring-boot-ext-logback-access:1.0')
     testCompile('org.springframework.boot:spring-boot-starter-test')
