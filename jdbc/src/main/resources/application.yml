@@ -1,0 +1,14 @@
+eureka:
+  client:
+    enabled: false
+
+spring:
+  application:
+    name: jdbc
+  datasource:
+    url: "jdbc:postgresql://db:5432/app"
+    username: dbuser
+    password: dbpass
+
+server:
+  port: 8000

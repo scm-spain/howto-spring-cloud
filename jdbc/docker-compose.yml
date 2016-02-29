@@ -1,0 +1,20 @@
+postgres:
+  image: postgres
+  environment:
+    POSTGRES_USER: dbuser
+    POSTGRES_PASSWORD: dbpass
+    POSTGRES_DB: app
+  volumes:
+    - "./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+  ports:
+    - 5432:5432
+
+app:
+  image: jeanblanchard/java
+  ports:
+    - "8000:8000"
+  volumes:
+    - ./build/libs:/code
+  links:
+      - postgres:db
+  command: java -jar -Dspring.profiles.active=dev /code/jdbc-1.0-SNAPSHOT.jar
