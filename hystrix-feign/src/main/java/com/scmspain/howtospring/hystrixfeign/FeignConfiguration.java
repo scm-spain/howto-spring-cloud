@@ -1,7 +1,9 @@
 package com.scmspain.howtospring.hystrixfeign;
 
+import feign.Contract;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
+import feign.jaxrs.JAXRSContract;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
@@ -13,6 +15,11 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 @Configuration
 public class FeignConfiguration {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(FeignConfiguration.class);
+
+    @Bean
+    public Contract feignContract() {
+        return new JAXRSContract();
+    }
 
     @Bean
     @ConditionalOnClass(RequestInterceptor.class)
