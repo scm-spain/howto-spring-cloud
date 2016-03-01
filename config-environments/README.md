@@ -45,5 +45,8 @@ You can pass [configuration values to Spring in several ways](https://docs.sprin
 12. Default properties (specified using SpringApplication.setDefaultProperties).
 
 
+## Reading several config files
+If you need to save configuration values in more places than only `application.yml`, you can pass the `spring.config.name` as an environment variable, command line argument or system property specifying which configuration files to load, as a comma separated list.
+
 ## Spring ways of loading config values
 [Learn more ways of loading config values](http://www.mkyong.com/spring/spring-propertysources-example/).

@@ -46,7 +46,7 @@ public class Endpoint {
 
     @RequestMapping(path = "/msg", method = RequestMethod.GET)
     public String msg() {
-        logger.info(config.getProperty("mydata.user.message"));
+        logger.info(config.getProperty("mydata.message"));
         return config.getProperty("mydata.message");
     }
 }
