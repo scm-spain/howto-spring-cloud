@@ -1,6 +1,8 @@
 spring:
   application:
     name: config-environments
+  main:
+    banner-mode: "off"
 
 eureka:
   client:

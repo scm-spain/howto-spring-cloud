@@ -4,5 +4,7 @@ eureka:
 spring:
   application:
     name: hello-world
+  main:
+    banner-mode: "off"
 server:
   port: 8000

@@ -5,6 +5,8 @@ eureka:
 spring:
   application:
     name: jdbc
+  main:
+    banner-mode: "off"
   datasource:
     url: "jdbc:postgresql://db:5432/app"
     username: dbuser

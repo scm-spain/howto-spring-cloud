@@ -7,6 +7,8 @@ eureka:
 spring:
   application:
     name: sleuth-service2
+  main:
+    banner-mode: "off"
   sleuth:
     sampler:
       percentage: 1

@@ -7,6 +7,8 @@ eureka:
 spring:
   application:
     name: reactive-response
+  main:
+    banner-mode: "off"
 server:
   port: 8002
 

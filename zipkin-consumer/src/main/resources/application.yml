@@ -10,6 +10,8 @@ server:
 
 
 spring:
+  main:
+    banner-mode: "off"
   cloud:
     stream:
       binder:
