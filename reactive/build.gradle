@@ -29,9 +29,8 @@ dependencies {
     compile 'org.springframework.cloud:spring-cloud-starter-eureka-server'
     compile 'javax.inject:javax.inject:1'
     compile 'org.springframework.cloud:spring-cloud-starter-hystrix:1.0.0.RELEASE'
-    compile 'io.jmnarloch:rxjava-spring-boot-starter:1.0.0'
-
     compile 'net.rakugakibox.springbootext:spring-boot-ext-logback-access:1.1'
+
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'org.skyscreamer:jsonassert:1.2.3'
     testCompile 'com.jayway.jsonpath:json-path:2.2.0'

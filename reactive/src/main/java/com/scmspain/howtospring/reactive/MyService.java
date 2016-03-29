@@ -25,6 +25,11 @@ public class MyService {
         return this.userRepository.findById(userId);
     }
 
+    public Observable<User> addUser(String userId, String name, String lastName) {
+        return Observable.just(new User(userId, name, lastName))
+            .doOnNext(userRepository::persist);
+    }
+
     public Observable<User> defaultUsers(){
         ArrayList<User> users = new ArrayList<>();
         users.add(new User("abc", "Default", "User"));

@@ -1,6 +1,5 @@
 package com.scmspain.howtospring.reactive;
 
-import org.springframework.stereotype.Service;
 import rx.Observable;
 
 import java.util.HashMap;
@@ -28,5 +27,10 @@ public class InMemoryUserRepository implements UserRepository {
     @Override
     public Observable<User> findById(String userId) {
         return Observable.just(users.get(userId));
+    }
+
+    @Override
+    public void persist(User user) {
+        users.put(user.getId(), user);
     }
 }
