@@ -6,4 +6,6 @@ public interface UserRepository {
     Observable<User> findAll();
 
     Observable<User> findById(String userId);
+
+    void persist(User user);
 }
