@@ -8,3 +8,6 @@ spring:
     banner-mode: "off"
 server:
   port: 8000
+  compression:
+    enabled: true
+    mime-types: "application/json,application/xml,application/javascript,text/html,text/xml,text/plain"
