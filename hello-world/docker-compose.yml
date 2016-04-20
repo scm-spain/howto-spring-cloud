@@ -1,0 +1,7 @@
+hello:
+  image: jeanblanchard/java
+  ports:
+    - "8000:8000"
+  volumes:
+    - ./build/libs:/code
+  command: java -jar /code/hello-world-1.0-SNAPSHOT.jar
