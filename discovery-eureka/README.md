@@ -37,5 +37,19 @@ $ curl -X GET -H "Accept: application/json" "http://localhost:8001/users"
 
 The application should've been registered on Eureka already, so let's check http://192.168.99.100:8000/eureka/
 
-## Logging with Logback
-This application is currently logging everything to stdout using [Logback](http://logback.qos.ch/) through [SLF4J](http://www.slf4j.org/). There is also [a library that we use](https://github.com/akihyro/spring-boot-ext-logback-access/) to be able to get an access log from Tomcat.
+## Discovering Eureka nodes using DNS TXT records
+Instead of explicitly specify the route to the eureka servers, you can use [a DNS based lookup for determining other eureka servers](https://github.com/Netflix/eureka/wiki/Deploying-Eureka-Servers-in-EC2#configuring-eips-using-dns).
+
+```yaml
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    useDnsForFetchingServiceUrls: true
+    eurekaServerDNSName: txt.dns.records.com
+    eurekaServerPort: 8080
+    eurekaServerURLContext: eureka
+    region: eu-west-1
+```
+
+You can find all the available configuration options [on the Bean class](https://github.com/spring-cloud/spring-cloud-netflix/blob/master/spring-cloud-netflix-eureka-client/src/main/java/org/springframework/cloud/netflix/eureka/EurekaClientConfigBean.java) that configures the Eureka client.
