@@ -5,6 +5,10 @@
         </encoder>
     </appender>
 
+    <logger name="com.scmspain.howtospring.hystrixfeign.UserServiceRestClient" level="debug" additivity="false">
+        <appender-ref ref="CONSOLE_APP" />
+    </logger>
+
     <root level="INFO">
         <appender-ref ref="CONSOLE_APP" />
     </root>

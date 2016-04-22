@@ -46,4 +46,10 @@ public class FeignConfiguration {
             }
         };
     }
+
+    @Bean
+    public feign.Logger.Level feignLoggingLevel() {
+        return feign.Logger.Level.BASIC;
+    }
+
 }
