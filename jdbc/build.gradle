@@ -33,7 +33,13 @@ dependencies {
     compile('org.postgresql:postgresql:9.4.+')
     compile('com.zaxxer:HikariCP:2.4.3')
 
-    compile('net.rakugakibox.springbootext:spring-boot-ext-logback-access:1.0')
+    compile('net.rakugakibox.springbootext:spring-boot-ext-logback-access:1.+')
+
+    testCompile('com.netflix.feign:feign-core:8.16.+')
+    testCompile('com.netflix.feign:feign-jackson:8.16.+')
+    testCompile('com.netflix.feign:feign-jaxrs:8.16.+')
+    testCompile('junit:junit:4.12')
+    testCompile("org.assertj:assertj-core:3.4.1")
 }
 
 dependencyManagement {
