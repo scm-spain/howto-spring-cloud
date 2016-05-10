@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
+./gradlew clean build
 docker-compose -f docker-compose-integration.yml up -d
-sleep 30
-docker-compose -f docker-compose-integration.yml run app gradle test
-docker-compose -f docker-compose-integration.yml rm -fv
+docker-compose -f docker-compose-integration.yml run --rm app gradle integrationTests
+docker-compose -f docker-compose-integration.yml down

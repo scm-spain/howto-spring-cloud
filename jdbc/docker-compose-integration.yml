@@ -23,4 +23,4 @@ services:
     depends_on:
         - postgres
     entrypoint: ""
-    command: java -jar -Dspring.profiles.active=dev /usr/bin/app/build/libs/jdbc-1.0-SNAPSHOT.jar
+    command: java -jar -Dspring.profiles.active=qa /usr/bin/app/build/libs/jdbc-1.0-SNAPSHOT.jar

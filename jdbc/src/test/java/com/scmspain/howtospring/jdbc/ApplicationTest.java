@@ -6,6 +6,7 @@ import feign.jackson.JacksonEncoder;
 import feign.jaxrs.JAXRSContract;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.springframework.cloud.netflix.feign.FeignClient;
 
 import javax.ws.rs.*;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Category(IntegrationTests.class)
 @FeignClient(name = "my-app", configuration = FeignConfiguration.class)
 public class ApplicationTest {
 
