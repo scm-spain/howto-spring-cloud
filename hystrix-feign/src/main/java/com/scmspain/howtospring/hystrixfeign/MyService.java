@@ -5,14 +5,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
 import rx.Observable;
 
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
 public class MyService {
     private static final Logger logger = LoggerFactory.getLogger(MyService.class);
 
