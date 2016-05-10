@@ -54,8 +54,12 @@ test {
     }
 }
 
-task integrationTests( type: Test ) {
+task dockerIntegrationTests( type: Test ) {
     useJUnit {
         includeCategories 'com.scmspain.howtospring.jdbc.IntegrationTests'
     }
+}
+
+task integrationTests(type:Exec, dependsOn: 'build') {
+    commandLine './integration-tests.sh'
 }
