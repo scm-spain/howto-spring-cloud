@@ -12,9 +12,19 @@ services:
       - 5432
 
   app:
-    image: niaquinto/gradle
+    image: jeanblanchard/java
     ports:
       - 8000
+    volumes:
+      - ./build/libs:/code
+    links:
+        - postgres:db
+    depends_on:
+        - postgres
+    command: java -jar -Dspring.profiles.active=qa /code/jdbc-1.0-SNAPSHOT.jar
+
+  integrationTests:
+    image: niaquinto/gradle
     volumes:
       - .:/usr/bin/app
       - $HOME/.gradle/caches:/root/.gradle/caches
@@ -22,5 +32,5 @@ services:
         - postgres:db
     depends_on:
         - postgres
-    entrypoint: ""
-    command: java -jar -Dspring.profiles.active=qa /usr/bin/app/build/libs/jdbc-1.0-SNAPSHOT.jar
+        - app
+    command: integrationTests
