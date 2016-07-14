@@ -61,3 +61,20 @@ Please, notice that we've added HikariCP dependency in our `build.gradle`.
 We use the official PostgreSQL Docker container to start a local database. The table that we use is defined in the `docker-entrypoint-initdb.d/database.sql` file, that is loaded when the container is created.
 
 The database username, password and database name are defined passing environment variables when we run the container. Take a look at the `docker-compose.yml` file see an example.
+
+## Integration Tests
+We have a simple End-to-End test that send HTTP requests to our application to check whether or not is working as expected. These tests need both the application listening requests and the database that saves users. We use `docker-compose` to start the full stack.
+
+```bash
+$ ./gradlew clean build # Compile the project
+$ docker-compose -f docker-compose-integration.yml run integrationTests # Execute gradle tasks for tests
+$ docker-compose -f docker-compose-integration.yml down # Remove the containers
+```
+
+There is a `integration-tests.sh` script that you can run to execute these tests easily, or a gradle task
+
+```bash
+$ ./gradlew clean runIntegrationTests
+```
+
+You can use this strategy to execute all kinds of integration tests: DAO tests, HTTP tests, consumers tests, etc

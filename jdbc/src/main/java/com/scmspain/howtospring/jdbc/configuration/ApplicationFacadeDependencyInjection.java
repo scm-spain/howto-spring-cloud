@@ -18,7 +18,7 @@ public class ApplicationFacadeDependencyInjection {
     }
 
     @Bean
-    @Profile({"dev", "pre", "pro"})
+    @Profile({"qa", "dev", "pre", "pro"})
     public UserRepository forUserRepository(JdbcTemplate jdbcTemplate) {
         return new JdbcUserRepository(jdbcTemplate);
     }
